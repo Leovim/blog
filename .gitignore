@@ -1,0 +1,9 @@
+*.pyc
+*.swp
+
+*.log
+*.sql
+
+# folder #
+
+/venv/
