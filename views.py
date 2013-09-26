@@ -10,6 +10,7 @@ class ViewError(StandardError):
         self.error = error
     def __str__(self):
         return 'ViewError:' + self.error
+# example: raise ViewError('error message')
 
 @app.errorhandler(404)
 def page_not_found(error):
@@ -26,7 +27,6 @@ def error_404():
 @app.route('/error/500')
 def error_500():
     return render_template('500.html'), 500
-
 # -- End of Error Control --
 
 @app.route('/')

@@ -1,7 +1,9 @@
 #coding=utf8
+
 from flask import Flask
 
 app = Flask(__name__)
+app.config.from_object('config')
 
 @app.route('/')
 def hello_world():
@@ -16,5 +18,4 @@ def test():
     return '正在測試.'
 
 if __name__ == '__main__':
-    app.debug = True
-    app.run('0.0.0.0', 5000)
+    app.run(host = '0.0.0.0', port = 5000, debug = True)
