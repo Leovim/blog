@@ -12,4 +12,4 @@ MYSQL_DB = 'blog'
 
 # mysql://leo:wahrr7231657@localhost:3306/blog
 SQLALCHEMY_DATABASE_URI = 'mysql://%s:%s@%s:%s/%s' % (MYSQL_USER, MYSQL_PASS,
-        MYSQL_HOST, MYSQL_PORT, MYSQL_DB)
+                                                      MYSQL_HOST, MYSQL_PORT, MYSQL_DB)

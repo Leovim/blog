@@ -32,8 +32,8 @@ class Post(db.Model):
         self.body = body
         if pub_date is None:
             pub_date = datetime.utcnow()
-        self.pub_date = pub_date
-        self.category = category
+            self.pub_date = pub_date
+            self.category = category
 
     def __repr__(self):
         return '<Post %r>' % self.title

@@ -1,13 +1,14 @@
 #coding=utf8
 
 from flask import Flask, render_template, session, request, \
-        url_for, redirect, Response, jsonify
+    url_for, redirect, Response, jsonify
 from blog import app
 
 # -- Error Control --
 class ViewError(StandardError):
     def __init__(self, error):
         self.error = error
+
     def __str__(self):
         return 'ViewError:' + self.error
 # example: raise ViewError('error message')
@@ -15,7 +16,7 @@ class ViewError(StandardError):
 @app.errorhandler(404)
 def page_not_found(error):
     return render_template('404.html'), 404
-        
+
 @app.errorhandler(500)
 def internal_error(error):
     return render_template('500.html'), 500
