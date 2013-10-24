@@ -1,6 +1,6 @@
 #coding=utf-8
 
-#DEBUG = True
+DEBUG = True
 FRAGMENT_PER_PAGE = 10
 
 # -- Flask SQLALCHEMY --
