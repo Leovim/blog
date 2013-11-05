@@ -39,4 +39,4 @@ nosetests.xml
 .pydevproject
 
 # for wsgi
-blog.wsgi
+*.wsgi

@@ -1,3 +1,3 @@
 import sys
-sys.path.append('/home/leo/Python/project/blog')
+sys.path.append('/var/www/html/leo_web/blog')
 from blog import app as application
