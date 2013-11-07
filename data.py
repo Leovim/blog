@@ -35,8 +35,12 @@ class Category(db.Model):
         return self.name
 
 article_tags = db.Table('tags',
-                        db.Column('tag_id', db.Integer, db.ForeignKey('tag.id')),
-                        db.Column('article_id', db.Integer, db.ForeignKey('article.id'))
+                        db.Column('tag_id', 
+                                  db.Integer, 
+                                  db.ForeignKey('tag.id')),
+                        db.Column('article_id', 
+                                  db.Integer, 
+                                  db.ForeignKey('article.id'))
                         )
 
 class Tag(db.Model):
@@ -57,8 +61,10 @@ class Article(db.Model):
     share = db.Column(db.Integer, default = 0) # 分享到社交网络
     click_count = db.Column(db.Integer, default = 0)
     category_id = db.Column(db.Integer, db.ForeignKey('user.id'), default = 1)
-    category = db.relationship('Category', backref = db.backref('articles', lazy
-                                                                = 'dynamic'), lazy = 'select')
+    category = db.relationship('Category', 
+                               backref = db.backref('articles', 
+                                                    lazy = 'dynamic'), 
+                               lazy = 'select')
     author_id = db.Column(db.Integer, db.ForeignKey('user.id'), default = 1)
     author = db.relationship('User', backref = 'articles', lazy = 'select')
     tags = db.relationship('Tag', secondary = article_tags, backref = 
@@ -81,8 +87,9 @@ class Comment(db.Model):
     reply_to_comment = db.relationship('Comment', backref='comments',
                                        remote_side=[id])
     article_id = db.Column(db.Integer, db.ForeignKey('article.id'))
-    article = db.relationship('Article', backref = db.backref('comments', 
-                                                              lazy = 'dynamic'))
+    article = db.relationship('Article', 
+                              backref = db.backref('comments', 
+                                                   lazy = 'dynamic'))
 
     def __unicode__(self):
         return self.content
