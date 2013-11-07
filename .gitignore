@@ -43,3 +43,6 @@ nosetests.xml
 
 # for database security
 config.py
+
+# for vim cache file
+*.swp
