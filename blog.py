@@ -1,6 +1,7 @@
 #coding=utf8
 
 from flask import Flask
+from blog.database import db_session
 
 app = Flask(__name__)
 app.config.from_object('config')
