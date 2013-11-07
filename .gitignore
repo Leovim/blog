@@ -40,3 +40,6 @@ nosetests.xml
 
 # for wsgi
 *.wsgi
+
+# for database security
+config.py
