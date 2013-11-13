@@ -2,6 +2,7 @@
 
 from sqlalchemy import Column, Integer, String
 from blog.database import Base
+from datetime import datetime
 import hashlib
 
 class User(Base):
@@ -57,3 +58,12 @@ class Tag(Base):
         
     def __repr__(self):
         return '<Tag %r %r>' % (self.tag_name, self.tag_num)
+
+class Article(Base):
+    """ table article"""
+    article_ID = Column(Integer, primary_key = True)
+    article_title = Column(String(60))
+    article_author = Column(Integer, ForeignKey('user.user_ID'))
+
+    def __init__(self, title = None, time_published = datetime.now(), content =
+                 None, tags = None):
