@@ -2,6 +2,7 @@
 
 from flask import Flask, render_template, session, request, \
     url_for, redirect, Response, jsonify
+
 from blog import app
 
 # -- Error Control --
@@ -11,6 +12,8 @@ class ViewError(StandardError):
 
     def __str__(self):
         return 'ViewError:' + self.error
+
+
 # example: raise ViewError('error message')
 
 @app.errorhandler(404)

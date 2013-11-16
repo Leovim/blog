@@ -1,6 +1,8 @@
 #coding=utf8
+
 from flask.ext.admin import Admin
 from flask.ext.admin.contrib.sqlamodel import ModelView
+
 from blog import app
 from data import (db, Category, Tag, Article, Comment, User,\
                   Link, BlackList, Subscriber)
@@ -8,6 +10,7 @@ from data import (db, Category, Tag, Article, Comment, User,\
 class MyModelView(ModelView):
     def is_accessible(self):
         return True
+
 
 admin = Admin(app, url='blog/admin')
 
