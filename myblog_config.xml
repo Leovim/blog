@@ -1,0 +1,9 @@
+<uwsgi>
+  <pythonpath>/home/leo/leo_web/blog</pythonpath>
+  <moudle>myblog</moudle>
+  <callable>app</callable>
+  <socket>/tmp/uwsgi.sock</socket>
+  <master/>
+  <processes>2</processes>
+  <memory-report/>
+</uwsgi>
